@@ -12,6 +12,8 @@ import {ToastModule} from 'primeng/toast'
 
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './modules/home/home.component'
+import { CookieService } from 'ngx-cookie-service';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -34,7 +36,7 @@ import { HomeComponent } from './modules/home/home.component'
     ButtonModule,
     ToastModule
   ],
-  providers: [],
+  providers: [CookieService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
