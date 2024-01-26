@@ -6,6 +6,7 @@ import { AuthResponse } from 'src/app/models/interfaces/user/AuthResponse';
 import { SignupUserRequest } from 'src/app/models/interfaces/user/SignupUserRequest';
 import { SignupUserResponse } from 'src/app/models/interfaces/user/SignupUserResponse';
 import { AuthRequest } from 'src/app/models/interfaces/user/AuthRequest';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class UserService {
 
   private API_URL = environment.API_URL;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
   signupUser(requestDatas: SignupUserRequest): Observable<SignupUserResponse> {
     return this.http.post<SignupUserResponse>(
@@ -30,8 +31,13 @@ export class UserService {
   }
 
 
+  //verifica se o usuário possui um tokken ou cookie
+  isLoggedIn(): boolean {
 
+    const JWT_TOKEN = this.cookie.get('USER_INFO');
 
+    return JWT_TOKEN ? true : false
+  }
 
 
 
