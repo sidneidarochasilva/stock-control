@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './modules/home/home.component'
 import { CookieService } from 'ngx-cookie-service';
 import { MessageService } from 'primeng/api';
+//import { ProductsHomeComponent } from './modules/products/page/products-home/products-home.component';
 
 
 
@@ -21,7 +22,8 @@ import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    //ProductsHomeComponent
   ],
   imports: [
     BrowserModule,

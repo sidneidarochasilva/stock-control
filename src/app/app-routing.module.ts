@@ -20,6 +20,15 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
     canActivate: [AuthGuard]
+  },
+
+  {
+    path: "products",
+    loadChildren: () =>
+      import('./modules/products/produts.module').then(
+        (m) => m.ProdutsModule
+      ),
+    canActivate: [AuthGuard]
   }
 
 ];
