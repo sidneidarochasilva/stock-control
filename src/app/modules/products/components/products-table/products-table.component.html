@@ -119,13 +119,15 @@
 
             <th>
               <div class="flex justify-content-center">
-                <p-button
+                <button
+                  pButton
                   styleClass="p-button-info"
                   icon="pi pi-plus"
                   label="Adicionar"
                   pTooltip="Adicionar produto"
                   tooltipPosition="top"
-                ></p-button>
+                  (click)="handleProductEvent(addProductEvent)"
+                ></button>
               </div>
             </th>
           </tr>
@@ -151,6 +153,7 @@
                   class="p-button-rounded p-button-warning"
                   pTooltip="Editar produto"
                   tooltipPosition="top"
+                  (click)="handleProductEvent(editProductEvent, product?.id)"
                 ></button>
 
                 <button
@@ -160,6 +163,7 @@
                   class="p-button-rounded p-button-danger"
                   pTooltip="Remover produto"
                   tooltipPosition="top"
+                  (click)="handleDeleteProduct(product?.id,product?.name)"
                 ></button>
               </div>
             </td>
