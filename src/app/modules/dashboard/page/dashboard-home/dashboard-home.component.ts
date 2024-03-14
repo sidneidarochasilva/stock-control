@@ -9,9 +9,17 @@ import { ProductsDataTransferService } from 'src/app/shared/products/products-da
 @Component({
   selector: 'app-dashboard-home',
   templateUrl: './dashboard-home.component.html',
-  styleUrls: []
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardHomeComponent implements OnInit, OnDestroy {
+
+  isSelected: boolean = true;
+
+  toggleSelection() {
+    this.isSelected = !this.isSelected;
+  }
+
+
   private destroy$ = new Subject<void>();
   public productsList: Array<GetAllProductsResponse> = [];
 
